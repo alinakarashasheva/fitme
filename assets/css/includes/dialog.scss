@@ -1,0 +1,28 @@
+.dialog{
+	position: absolute;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, .9);
+	border: none;
+	top:0;
+	&__button-close{
+		display: none;
+		position: absolute;
+		background: transparent url('../img/close.svg') no-repeat center / contain;		
+		height: 30px;
+		width: 38px;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		right: 6%;
+		top:4%;
+		@include respond-to(middle-screens) {
+			display: block;
+		}
+		@include respond-to(small-screens) {
+			height: 12px;
+			width: 19px;
+			right: 5%;
+			top:2%;
+		}
+	}
+}

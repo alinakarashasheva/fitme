@@ -1,0 +1,167 @@
+.main{	
+	height: 1012px;
+	@include respond-to(middle-screens) { 
+		height: 1080px;
+	}	
+	@include respond-to(small-screens) {
+		height: 557px; 
+	}	
+	text-align: center;
+	position: relative;
+}
+
+.main-scene{
+	margin: 0;
+	padding: 0;
+	height: 100%; 
+	@include respond-to(middle-screens) { 
+    	overflow:hidden;
+	}
+
+	&__item{
+		width: 100%;
+		height: 100%;
+		@include respond-to(middle-screens) { 
+			visibility: hidden;
+			position: absolute;
+		}
+	}	
+	&__img{
+		position: absolute;
+		&_girl{
+			height: 820px;
+			bottom: -30px;
+			&-simple{
+				left:10%;				
+				@include respond-to(standart-screens) { 
+					left:5%;
+				}	
+			}
+			&-sport{
+				right: 10%;				
+				@include respond-to(standart-screens) { 
+					right:5%;
+				}	
+			}
+		}
+	}
+}
+.main-scene-center{	
+    position: absolute;
+    width: 300%;
+    height: 400%;
+    bottom: 0;
+    left: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translateX(-50%);
+    z-index: -1;
+    &_no-parallax{
+    	display: none;
+		@include respond-to(middle-screens) { 
+			display: block;
+		}
+    }
+
+	@include respond-to(standart-screens) { 
+    	width: 400%;
+	}
+	&__img{
+		position: absolute;
+		width: 610px;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -55px;
+		@include respond-to(middle-screens) { 
+			bottom: 0px;
+		}
+		@include respond-to(small-screens) { 
+			width: 325px;
+		}
+	}
+	&__gradient{
+		height: 25%;
+		background: linear-gradient(to top, #e6e6e6 30%, #fff 100%);
+		position: absolute;
+		bottom: 0;left: 0;right: 0;
+	}
+}
+
+.info-text{
+	height: 100%;
+	width: 100%;
+}
+.title{
+    position: relative;
+	margin-top:155px; 
+	display: inline-block;
+	@include respond-to(middle-screens) { 
+		margin-top:150px; 
+	}	
+	@include respond-to(small-screens) {
+		margin-top:60px; 
+	}	
+	&__img{
+		height: 102px;
+		@include respond-to(middle-screens) { 
+			height: 95px;
+		}	
+		@include respond-to(small-screens) { 
+			height: 43px; 
+		}
+	}
+	&__text{
+	    @include main-title-text;
+    	font-weight: initial;
+    	margin-top: 28px;
+		@include respond-to(middle-screens) { 
+    		margin-top: 19px;
+		}	
+		@include respond-to(small-screens) { 
+    		margin-top: 7px;
+		}
+	}
+	&__stamp{
+		position: absolute;
+	    top: 5px;
+	    right: -44%;
+	    height: 122px;
+		@include respond-to(middle-screens) { 
+    		top:auto;
+    		bottom: -147px;
+    		right: -18px;
+    		height: 110px;
+		}	
+		@include respond-to(small-screens) { 
+			bottom: -72px;
+			right: -15px;
+			height: 53px;
+		}
+	}
+}
+.main-form{
+	display: flex;
+	align-items:center;
+	flex-direction:column;
+	position: absolute;
+	bottom: 85px;
+	@include respond-to(standart-screens) { 
+		bottom: 130px;
+	}
+	@include respond-to(middle-screens) { 
+		bottom: 180px;
+	}
+	@include respond-to(small-screens) { 
+		bottom: 75px;
+	}
+	left: 50%;	
+    transform: translateX(-50%);
+	&__title{
+	    @include main-form-title-text;
+	    margin-bottom: 70px;	    
+		@include respond-to(small-screens) { 
+	    	margin-bottom: 15px;
+		}
+	}
+
+}

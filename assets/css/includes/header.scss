@@ -1,0 +1,228 @@
+.header {
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left: 0;
+    @include menu-text;
+    padding: 19px 0 0;
+	@include respond-to(standart-screens) {
+	    padding-top: 27px; 
+	}
+	@include respond-to(middle-screens) { 
+		box-shadow: 0px 0px 22.32px 1.68px rgba(0, 0, 0, 0.26); 
+		padding: 0;
+	}
+	&_fixed{
+		position: fixed;
+		background-color: #fff;
+	}
+}
+.nav{
+	display: flex;	
+    justify-content: space-between;    
+    align-items:center;
+    padding: 33px 0;  
+    margin: 0 auto;
+    border-bottom: 1px solid $gray-line;
+	@include respond-to(large-screens) { 
+    	padding: 26px 0;
+    	width: 84%;
+	}
+    @include respond-to(standart-screens) { 
+    	width: 80%;  	
+    }
+	@include respond-to(middle-screens) { 
+    	padding: 21px 0;
+		border:none;
+		width: 88%;
+		align-items: center;
+	}	
+	@include respond-to(small-screens) { 
+		padding: 10px 0;
+    	width: 90%; 
+	}
+	&__logo{		
+		@include respond-to(middle-screens) {
+		    order:2;
+		}
+	}
+    &__logo-img{  		
+    	height: 20px;
+    	padding-right: 50px;
+    	display: block;
+    	@include respond-to(middle-screens) {
+    		height: 22px;
+		    padding: 0;
+		}  	
+		@include respond-to(small-screens) { 
+    		height: 11px;
+		}
+    }
+    &__instagram{
+    	cursor: pointer;
+		@include respond-to(standart-screens) { 
+	    	width: 18px;
+	    	height: 18px; 
+		}
+		@include respond-to(large-screens) { 
+	    	width: 34px;
+	    	height: 34px;
+		}
+		@include respond-to(middle-screens) { 			
+	    	width: 34px;
+	    	height: 34px;
+		    order:1;
+		}
+    	@include respond-to(small-screens) { 
+	    	width: 17px;
+	    	height: 17px; 
+		}
+    	background-repeat: no-repeat;
+    	background-position: center;
+    	background-size: contain;
+    	background-image: url('../img/instagram_menu.svg');
+		&:hover{
+    		background-image: url('../img/instagram_hover_menu.svg');
+		}
+    }
+}
+
+.header-uc{
+	cursor: pointer;
+	@include respond-to(standart-screens) { 
+		padding: 0 16px;
+	}
+	@include respond-to(large-screens) { 
+		padding: 0 45px;
+	}
+
+	display: flex;
+	align-items:center;
+	&__img{
+    	width: 40px;
+    	height: 40px;
+		@include respond-to(standart-screens) { 
+	    	width: 20px;
+	    	height: 18px; 
+		}
+		@include respond-to(middle-screens) { 
+	    	width: 36px;
+	    	height: 38px;
+		}
+		@include respond-to(small-screens)  { 
+	    	width: 20px;
+	    	height: 18px; 
+		}
+    	display: block;
+	}  
+	&__text{
+		padding:0 20px;
+		@include respond-to(standart-screens) { 
+			display: none;
+		}
+		@include respond-to(middle-screens) { 
+			display: inline-block;
+		}
+		&:hover{
+			color: $text-active;
+		}
+	} 	
+
+}
+.menu{
+	flex:2;   	
+	@include respond-to(large-screens) { 
+		padding: 0 20px; 
+	}	
+	@include respond-to(standart-screens) { 
+		padding: 0 13px; 
+	}
+	@include respond-to(middle-screens) { 
+		order:3;
+		flex:inherit;
+		padding: 0;
+	}
+	&__toggle{
+		display: none;
+		&-img{
+			display: none;
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}	
+		@include respond-to(middle-screens) { 
+			&-img{
+				display: block;
+				background-image: url('../img/close.svg');
+				height: 30px;
+				width: 38px;
+			}
+			&:not(:checked) ~ &-img{
+				background-image: url('../img/menu-lines.svg');
+				height: 28px;
+			}
+			&:checked ~ .menu-list{
+				display: flex;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+			}
+		}
+		@include respond-to(small-screens) { 
+			&-img{
+				height: 12px;
+				width: 19px;
+			}
+			&:not(:checked) ~ &-img{
+				height: 12px;
+			}
+		}
+
+	}
+}
+.menu-list{
+	display: flex;
+    justify-content: space-between;
+	align-items:center;
+	// transition: all 0.3s;
+	&__item{
+		&_active,
+		&:hover{
+    		color: $text-active;
+    	}
+	}
+	@include respond-to(middle-screens) { 
+	    display: none;
+	    flex-direction: column;
+    	padding: 13px 0 26px;
+		background-color: #fff;
+	}
+
+	&__line{
+		display: none;
+		height: 1px;
+    	border-bottom: 1px solid $gray-line;
+    	width: 27%;
+		@include respond-to(middle-screens) { 
+	    	display: block;
+			margin: 36px 0;
+		}		
+		@include respond-to(small-screens) { 
+			margin: 26px 0;
+		}		
+	}
+}
+.uc-form{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    text-align: center;
+    &__question{
+    	@include question-text;
+    	cursor: pointer;
+    }
+}
+

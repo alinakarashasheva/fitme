@@ -1,0 +1,46 @@
+.input{
+	border-radius: 30px;
+	border-style: solid;
+	border-width:1px;
+	display: block;
+	&:hover, &:focus{
+		outline: none;
+	}	
+	padding: 12px 65px;
+    margin: 10px auto;
+	width: 305px;
+	@include respond-to(small-screens) {
+		width: 245px;
+    	margin: 5px auto;
+	}
+	&[type=password],
+	&[type=text]{
+		text-align: left;
+		background-color: #fff;
+		@include input-text;
+		outline: none;
+		border-color:#aeaeae;
+		box-shadow: inset -1px 2px 2px 0px rgba(0, 0, 0, 0.33);
+		&:placeholder{
+			@include input-text;
+			color:initial;
+		}
+	}
+	&[type=submit]{
+		text-align: center;
+		background-color: $button-color;
+   		@include input-button-text;
+   		border-color:$button-color;
+   		&:hover{
+   			background-color:#fff;
+   			color:$button-color;
+   		}
+   		cursor: pointer;
+	}
+	&_phone{
+		background: #fff url('../img/phone.svg') no-repeat 27px center / 1em;
+	}	
+	&_password{
+		background: #fff url('../img/key.png') no-repeat 27px center / 1em;
+	}
+}

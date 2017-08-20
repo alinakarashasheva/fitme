@@ -1,0 +1,47 @@
+include dialog
+include input
+
+header.header
+	nav.nav
+		.nav__logo
+			img(src="assets/img/logo.svg", alt="logo-img").nav__logo-img
+		.menu			
+			input(id="toggle",type="checkbox").menu__toggle
+			label(for="toggle").menu__toggle-img
+			ul.menu-list
+				li.menu-list__item.menu-list__item_active
+					a(href="#")="Главная"      
+				li.menu-list__item
+					a(href="#")="О проекте"
+				li.menu-list__item
+					a(href="#")="Для кого"      
+				li.menu-list__item
+					a(href="#")="Кто ведет"      
+				li.menu-list__item
+					a(href="#")="Призы"      
+				li.menu-list__item
+					a(href="#")="Участие"      
+				li.menu-list__item
+					a(href="#")="Отзывы"      
+				li.menu-list__item
+					a(href="#")="Результаты"     
+				li.menu-list__item
+					a(href="#")="Стоимость"      
+				li.menu-list__item
+					a(href="#")="Партнеры"
+				li.menu-list__line
+				li.menu-list__item					
+					.header-uc
+						.header-uc__line
+						img(src="assets/img/cabinet_menu.svg", alt="enter-img", onclick="openUcDialog()").header-uc__img
+						span(onclick="openUcDialog()").header-uc__text="Личный кабинет"
+
+		.nav__instagram
+	+dialog(id="ucDialog")
+		form(action="").uc-form		
+			+input("text")(placeholder="Номер телефона", required).input_phone
+			+input("password")(placeholder="Пароль", required).input_password
+			+input("submit")(value="Войти")
+			a.uc-form__question="Забыли пароль?"
+
+		

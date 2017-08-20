@@ -1,0 +1,63 @@
+.about{
+	display: flex;
+	padding: 70px 5%;
+	@include respond-to(middle-screens) { 
+		padding: 0 15%;
+	}
+	&__text,
+	&__picture{
+		flex-basis:50%;
+
+	}
+	&__picture{
+		text-align: center;
+		background: url('../img/about_sport_girl.png') no-repeat center / contain ;		
+		@include respond-to(middle-screens) { 
+	    	display:none;
+		}	
+	}
+	&__text{
+		@include respond-to(middle-screens) { 
+			flex-basis:100%;
+		}
+		padding: 0 0 90px;
+	}
+	&__title{
+		padding: 65px 38px;		
+		@include respond-to(middle-screens) { 
+			text-align: center;
+			padding: 50px 0;
+		}
+		@include respond-to(small-screens) { 
+			text-align: center;
+			padding: 40px 0;
+		}
+	}
+	
+}
+.about-list{
+		&__description{
+			padding: .5em 0;
+		}
+		&__item{
+			padding: .5em 0;
+			position: relative;
+			&:before{
+				content: "";
+				width: .5em;
+				height: .5em;
+				display:block;
+				background-color: #b00000;
+				position: absolute;
+				border-radius: 50%;
+				left:-35px;
+				@include respond-to(middle-screens) { 
+					left:-50px;
+				}
+				@include respond-to(small-screens) { 
+					left:-30px;
+				}
+				top:.8em
+			}
+		}
+	}

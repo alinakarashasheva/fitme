@@ -1,0 +1,25 @@
+$text-black: #010101;
+$text-active:#b00000;
+$gray-line:#959595;
+$text-white:#fff;
+$button-color:#b00000;
+
+$break-small: 320px;
+$break-middle: 640px;
+$break-standart: 1366px;
+$break-large: 1920px;
+
+@mixin respond-to($media) {
+  @if $media == small-screens {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == middle-screens {
+    @media only screen and (max-width: $break-middle) { @content; }
+  }
+  @else if $media == standart-screens {
+    @media only screen and (max-width: $break-standart) { @content; }
+  }
+  @else if $media == large-screens {
+    @media only screen and (min-width: $break-large) and (max-width: $break-large){ @content; }
+  }
+}

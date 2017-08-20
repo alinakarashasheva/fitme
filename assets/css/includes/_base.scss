@@ -1,0 +1,189 @@
+@import "includes/variables";
+
+/*	FONTS
+------------------------*/
+@font-face {
+    font-family: 'Raleway-Black';
+    src: url('../fonts/Raleway-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-Bold';
+    src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-Light';
+    src: url('../fonts/Raleway-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway-Regular';
+    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+/*  Mixins
+–––––––––––––––––––––––––––*/
+@mixin full-page {
+    top: 0;bottom: 0;left: 0;right: 0;
+}
+@mixin menu-text {
+    font-family: 'Raleway-Bold';
+    @include respond-to(large-screens) { 
+        font-size: 16px; 
+    }
+    @include respond-to(standart-screens) { 
+        font-size: 13px; 
+    }
+    @include respond-to(middle-screens) { 
+        font-size: 30px;
+        line-height: 60px;
+    }
+    @include respond-to(small-screens) { 
+        font-size: 14px;
+        line-height: 31.91px;
+    }
+    color: $text-black;
+    text-transform: uppercase;
+}
+@mixin main-title-text {
+    font-family: 'Raleway-Regular';
+    font-size: 25px; 
+    @include respond-to(middle-screens) { 
+        font-size: 30.37px;
+    }
+    @include respond-to(small-screens) { 
+        font-size: 19px;
+    }
+    color: $text-black;
+}
+@mixin input-button-text {
+    font-family: 'Raleway-Bold';
+    font-size: 20px; 
+    @include respond-to(standart-screens) { 
+        font-size: 18px;
+    }
+    @include respond-to(small-screens) { 
+        font-size: 14px;
+    }
+    color: $text-white;
+    text-transform: uppercase;
+}
+@mixin question-text {
+    font-family: 'Raleway-Bold';
+    font-size: 20px; 
+    @include respond-to(standart-screens) { 
+        font-size: 18px;
+    }
+    @include respond-to(small-screens) { 
+        font-size: 14px;
+    }
+    color: $text-black;
+    text-transform: initial;
+}
+@mixin main-form-title-text {
+    @include input-button-text;
+    text-shadow: 0px 1px 6px rgba(0, 0, 0, 1); 
+}
+@mixin input-text {
+    font-family: 'Raleway-Regular';
+    font-size: 20px; 
+    @include respond-to(standart-screens) { 
+        font-size: 15px;
+    }
+    @include respond-to(small-screens) { 
+        font-size: 14px;
+    }
+    color: $text-black;
+}
+
+/*	TYPOGRAPHY
+–––––––––––––––––––––––––––*/
+body {
+	background-color: #fff;
+	margin: 0;
+    width:100%;
+    overflow-x: hidden; 
+}
+
+/* ------ Normalize ----- */
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+header,
+footer,
+main,
+dialog,
+section{
+    width: 100%;
+    display: block;
+}
+.container{
+    width: 80%;
+    @include respond-to(large-screens) { 
+        width: 84%;
+    }
+    margin: 0 auto;
+}
+.common-title-light{
+    color:$text-black;
+    font-family:'Raleway-Light';
+    font-size: 50px;
+    @include respond-to(middle-screens) {
+        font-size: 80px;
+    }
+    @include respond-to(small-screens) {
+        font-size: 40px;
+    }
+    font-weight: inherit; 
+}
+.common-subtitle-bold{
+    color:$text-black;
+    font-family:'Raleway-Bold';
+    font-size: 20px;
+    @include respond-to(middle-screens) {
+        font-size: 30px;
+    }
+    @include respond-to(small-screens) {
+        font-size: 19px;
+    }
+    font-weight: inherit; 
+    text-transform: uppercase;
+}
+.common-main-regular{
+    color:$text-black;
+    font-family:'Raleway-Regular';
+    font-size: 15px;
+    @include respond-to(middle-screens) {
+        font-size: 20px;
+    }
+    @include respond-to(small-screens) {
+        font-size: 14px;
+    }
+    font-weight: inherit;
+    text-transform: initial;    
+}
+h1,h2,h3,p{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+

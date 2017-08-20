@@ -1,0 +1,15 @@
+extends _layouts/home
+
+block head_end
+	link(rel="stylesheet" href="assets/css/style.css") 
+
+block content	
+	include _partials/header
+	include _partials/main
+	include _partials/about
+
+block body_end
+	script(type="text/javascript" src="assets/js/jquery-3.2.1.min.js")
+	script(type="text/javascript" src="assets/js/parallax.min.js")
+	script(type="text/javascript" src="assets/js/header.js")
+	script(type="text/javascript" src="assets/js/script.js")

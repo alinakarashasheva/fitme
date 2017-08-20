@@ -1,0 +1,29 @@
+include input
+
+mixin main-scene-center
+	.main-scene-center&attributes(attributes)
+		.main-scene-center__gradient
+		img(src="assets/img/main_show_man.png", alt="main_sport_men-img").main-scene-center__img
+
+
+main.main
+	.main-scene(id="main-scene")
+		div(data-depth="0.20").main-scene__item
+			+main-scene-center
+
+		div(data-depth="0.60").main-scene__item.main-scene__item_girls
+			img(src="assets/img/main_sport_girl.png", alt="main_sport_girl-img").main-scene__img.main-scene__img_girl.main-scene__img_girl-sport
+
+		div(data-depth-x="-0.60", data-depth-y="-0.20").main-scene__item.main-scene__item_girls
+			img(src="assets/img/main_simple_girl.png", alt="main_simpel_girl-img").main-scene__img.main-scene__img_girl.main-scene__img_girl-simple
+
+		.info-text
+			+main-scene-center.main-scene-center_no-parallax
+			h1.title
+				img(src="assets/img/logo.svg", alt="logo-img").title__img
+				.title__text="Самый масштабный фитнес-проект в Казахстане"
+				img(src="assets/img/stamp.png", alt="stamp-img").title__stamp
+	form(action="").main-form
+		h2.main-form__title="Заполните заявку, чтобы узнать о старте проекта"
+		+input("text")(placeholder="Номер телефона",required).input_phone
+		+input("submit")(value="Отправить")
